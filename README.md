@@ -1,3 +1,7 @@
+# Установка Docker на Windows 10
+
+Скачать и установить [DockerToolbox-19.03.1.exe](https://github.com/docker/toolbox/releases)
+
 # Сборка контейнера
 
 ```docker build  --tag gmw .```
@@ -5,6 +9,12 @@
 # Запуск для UNIX-подобных систем
 
 ```./run.sh```
+
+# Запуск для Windows 10
+
+*Следуйте русскоязычной инструкции, которая появится в консоли*
+
+```./run_win.sh```
 
 # Просмотр
 
