@@ -17,9 +17,12 @@ echo ""
 
 if [ $? -eq 1 ]; then
   echo "'$CONTAINER' does not exist. Creating a new one."
-  docker run -p 8888:8888 --name gmw-container gmw:latest
 else
-  echo "Restarting existing container."
+  echo "Stopping existing container."
   docker container stop gmw-container
-  docker container start --attach gmw-container
 fi
+
+export LOCAL_PATH="//$(pwd)/workspace"
+
+echo "Copy this link to your browser:"
+docker run --rm -p 8888:8888 -v $LOCAL_PATH:/usr/src/app/workspace --name gmw-container  gmw:latest
